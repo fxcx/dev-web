@@ -26,7 +26,7 @@ export default function HomeView() {
               href="/my-skills"
               className="rounded-[20px] group relative bg-blue-500 hover:bg-blue-400 px-5 py-3 text-lg text-white max-w-[200px]"
             >
-              Learn more
+              skills
             </Link>
             <Link
               href="/my-projects"
@@ -34,13 +34,6 @@ export default function HomeView() {
             >
               <div className="absolute rounded-[20px]  bg-white inset-0 opacity-0 group-hver:opacity-20" />
               My projects
-            </Link>
-            <Link
-              href="/contact-me"
-              className="rounded-[20px] group relative bg-trasparent border border-white px-5 py-3 text-lg text-white max-w-[200px]"
-            >
-              <div className="absolute rounded-[20px]  bg-white inset-0 opacity-0 group-hver:opacity-20" />
-              Contact me
             </Link>
           </div>
         </div>

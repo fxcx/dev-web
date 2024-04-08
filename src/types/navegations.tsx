@@ -1,4 +1,4 @@
-import { RxHome, RxPerson, RxDashboard, RxClipboard } from "react-icons/rx";
+import { RxHome, RxPerson, RxDashboard } from "react-icons/rx";
 
 export const NavLinks = [
     {
@@ -15,11 +15,6 @@ export const NavLinks = [
       name: "/my-projects",
       icon: RxDashboard,
       link: "/my-projects",
-    },
-    {
-      name: "/contact-me",
-      icon: RxClipboard,
-      link: "/contact-me",
     },
   ];
   
