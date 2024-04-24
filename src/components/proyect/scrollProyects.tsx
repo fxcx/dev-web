@@ -1,11 +1,10 @@
-"use client"
 import ProjectCard from "@/components/proyect/ProjectCard"
 
 const ScrollProyect = () => {
     return (
         <section className="flex justify-center flex-wrap gap-2 w-screen h-screen">
 
-            <div className="">
+            <div className="p-1">
                 <ProjectCard
                     src="/port.jpg"
                     title="Next.js Portfolio"
@@ -15,11 +14,11 @@ const ScrollProyect = () => {
                     <div className="flex flex-wrap gap-2 justify-center w-[300px] ">
                         <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">Next.js</span>
                         <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">typeScript</span>
-                        <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">Tealwind</span>
+                        <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">Tailwind</span>
                     </div>
                 </div>
             </div>
-            <div className="">
+            <div className="p-1">
                 <ProjectCard
                     src="/memealo.jpg"
                     title="Memealo"
@@ -29,9 +28,10 @@ const ScrollProyect = () => {
                     <div className="flex flex-wrap gap-2 justify-center w-[300px]">
                         <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">Next.js</span>
                         <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">typeScript</span>
-                        <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">Postgres</span>
-                        <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">Postgres</span>
-                        <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">Postgres</span>
+                        <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">Prisma</span>
+                        <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">PostgreSQL</span>
+                        <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">express.js</span>
+                        <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">Tailwind</span>
                     </div>
                 </div>
             </div>

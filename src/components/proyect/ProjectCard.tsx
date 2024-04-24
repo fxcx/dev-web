@@ -8,7 +8,7 @@ interface Props {
 
 const ProjectCard = ({ src, title, description }: Props) => {
   return (
-    <div className="grid place-items-center ">
+    <div className="grid place-items-center">
       <Image
         src={src}
         alt={title}
