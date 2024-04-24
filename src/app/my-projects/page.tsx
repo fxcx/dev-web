@@ -12,7 +12,7 @@ const Projects = () => {
       </div>
       <div>
       </div>
-      <section className="grid place-items-center overflow-x-hidden">
+      <section className="grid place-items-center overflow-x-hidden mb-[70px]">
         <ScrollProyect />
       </section>
     </section>

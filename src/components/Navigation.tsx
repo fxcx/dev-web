@@ -6,11 +6,11 @@ import { useEffect, useState } from "react";
 import Transition from "./Transition";
  
 const Navigation = () => {
- const [isRouting, setIsRouting] = useState(false);
+  const [isRouting, setIsRouting] = useState(false);
   const path = usePathname();
   const [prevPath, setPrevPath] = useState("/");
 
-  useEffect(() => {
+  const handleNavigationChange = () => {
     if (prevPath !== path) {
       setIsRouting(true);
       const timeout = setTimeout(() => {
@@ -20,7 +20,11 @@ const Navigation = () => {
 
       return () => clearTimeout(timeout);
     }
-  }, [path, prevPath]);
+  };
+
+  useEffect(() => {
+    handleNavigationChange();
+  });
 
   return (
     <div
@@ -30,13 +34,13 @@ const Navigation = () => {
       {isRouting && <Transition />}
       {NavLinks.map((nav) => (
         <Link key={nav.name} href={nav.link}>
-          <li className="mb-16 min-w-[20%]">
+          <div className="mb-16 min-w-[20%]">
             <nav.icon
               className={`w-[34px] h-[34px] p-1 ${
                 path === nav.link ? "text-purple-800" : "text-white"
               }`}
             />
-          </li>
+          </div>
         </Link>
       ))}
     </div>
