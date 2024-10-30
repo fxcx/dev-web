@@ -9,16 +9,16 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'facundo burgos',
   description: 'This is my portfolio',
-  keywords: 'developers, back-end, front-end',
+  keywords: 'developers, back-end, front-end'
 }
 
-export default function RootLayout({
-  children,
+export default function RootLayout ({
+  children
 }: {
   children: React.ReactNode
-}) {
+}): JSX.Element {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={inter.className}>
         <Navbar />
         {children}

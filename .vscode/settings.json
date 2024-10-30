@@ -1,0 +1,47 @@
+{
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "javascript.validate.enable": false, // Desactiva la validación por defecto de JS
+    "standard.enable": true, // Activa standardjs
+    "standard.autoFixOnSave": true, // Aplica auto-fix al guardar
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "standard.vscode-standard"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "standard.vscode-standard",
+      "editor.formatOnSave": true
+    },
+    "json.schemas": [],
+    "vsicons.presets.jsOfficial": false,
+  
+    "workbench.colorCustomizations": {
+      "editor.foreground": "#abb2bf",
+      "editorCursor.foreground": "#2054a8",
+      "sideBar.background": "#0f1a21",
+      "editor.selectionBackground": "#0d1930",
+      "list.activeSelectionBackground": "#1a2c3c",
+      "list.activeSelectionForeground": "#7eb8d7",
+      "list.inactiveSelectionBackground": "#08163b",
+      "list.inactiveSelectionForeground": "#0f2d51",
+      "activityBar.activeBackground": "#294660",
+      "activityBar.background": "#294660",
+      "activityBar.foreground": "#e7e7e7",
+      "activityBar.inactiveForeground": "#e7e7e799",
+      "activityBarBadge.background": "#000000",
+      "activityBarBadge.foreground": "#e7e7e7",
+      "commandCenter.border": "#e7e7e799",
+      "sash.hoverBorder": "#294660",
+      "statusBar.background": "#1a2c3c",
+      "statusBar.foreground": "#e7e7e7",
+      "statusBarItem.hoverBackground": "#294660",
+      "statusBarItem.remoteBackground": "#1a2c3c",
+      "statusBarItem.remoteForeground": "#e7e7e7",
+      "titleBar.activeBackground": "#1a2c3c",
+      "titleBar.activeForeground": "#e7e7e7",
+      "titleBar.inactiveBackground": "#1a2c3c99",
+      "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.remoteColor": "#1a2c3c"
+  
+  }
+  

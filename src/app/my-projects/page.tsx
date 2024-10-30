@@ -1,18 +1,18 @@
-import ScrollProyect from "@/components/proyect/scrollProyects"
+import ScrollProyect from '@/components/proyect/scrollProyects'
 
-const Projects = () => {
+const Projects = (): JSX.Element => {
   return (
     <section
-      className="grid max-h-full h-screen w-screen"
-      style={{ backgroundImage: "url(/main-bg.webp)" }}>
-      <div className="relative">
-        <h1 className=" text-center text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
+      className='grid max-h-full h-screen w-screen'
+      style={{ backgroundImage: 'url(/main-bg.webp)' }}
+    >
+      <div className='relative'>
+        <h1 className=' text-center text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20'>
           Mis Proyectos
         </h1>
       </div>
-      <div>
-      </div>
-      <section className="grid place-items-center overflow-x-hidden mb-[70px]">
+      <div />
+      <section className='grid place-items-center overflow-x-hidden mb-[70px]'>
         <ScrollProyect />
       </section>
     </section>
