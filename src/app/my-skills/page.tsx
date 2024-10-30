@@ -1,7 +1,7 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { SkillData } from "@/types";
+import {skills as SkillData } from "@/data/skill";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 
@@ -19,10 +19,10 @@ const Skill = () => {
               {" "}
               &{" "}
             </span>
-            Technologies
+            Tecnologias
           </h1>
           <p className="text-gray-400 text-[20px]">
-           Using the latest technology of the moment
+           Estas son las tecnologias y habilidades que manejo
           </p>
         </div>
         <Swiper
@@ -39,7 +39,7 @@ const Skill = () => {
           {SkillData.map((skill, index) => (
             <SwiperSlide key={index}>
               <Image
-                src={skill.Image}
+                src={skill.image}
                 alt={skill.name}
                 width={skill.width}
                 height={skill.height}
@@ -62,7 +62,7 @@ const Skill = () => {
           {SkillData.map((skill, index) => (
             <SwiperSlide key={index}>
               <Image
-                src={skill.Image}
+                src={skill.image}
                 alt={skill.name}
                 width={skill.width}
                 height={skill.height}

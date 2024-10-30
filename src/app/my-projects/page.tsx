@@ -7,7 +7,7 @@ const Projects = () => {
       style={{ backgroundImage: "url(/main-bg.webp)" }}>
       <div className="relative">
         <h1 className=" text-center text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
-          My Projects
+          Mis Proyectos
         </h1>
       </div>
       <div>
