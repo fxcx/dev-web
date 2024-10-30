@@ -1,6 +1,6 @@
-import { Socials } from "@/types";
-import Link from "next/link";
-import Image from "next/image";
+import { Socials } from "@/types"
+import Link from "next/link"
+import Image from "next/image"
 
 const Navbar = () => {
   return (
@@ -19,21 +19,25 @@ const Navbar = () => {
         {Socials.map((social) => (
           <>
             <Image
-              key={social.name}
               src={social.src}
+              key={social.name}
               alt={social.name}
               width={28}
               height={28}
             />
 
-            <Link className="opacity-0 relative right-9" href={social.link}>
+            <Link
+              className="opacity-0 relative right-9"
+              key={social.name}
+              href={social.link}
+            >
               {social.name}
             </Link>
           </>
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

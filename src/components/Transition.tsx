@@ -1,5 +1,5 @@
-"use client";
-import { motion } from "framer-motion";
+"use client"
+import { motion } from "framer-motion"
 
 const TransitionVariants = {
   initial: {
@@ -14,7 +14,7 @@ const TransitionVariants = {
     y: ["0%", "100%"],
     height: ["0%", "100%"],
   },
-};
+}
 
 const Transition = () => {
   return (
@@ -44,7 +44,7 @@ const Transition = () => {
         transition={{ delay: 0.6, duration: 0.6, ease: "easeInOut" }}
       />
     </div>
-  );
-};
+  )
+}
 
-export default Transition;
+export default Transition
