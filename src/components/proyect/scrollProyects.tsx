@@ -1,42 +1,74 @@
-import ProjectCard from "@/components/proyect/ProjectCard"
+"use client"
+import { projects } from "@/data/proyects"
+import Image from "next/image"
+import { useState } from "react"
 
-const ScrollProyect = () => {
-    return (
-        <section className="flex justify-center flex-wrap gap-2 w-screen h-screen">
+// Extrae las tecnologías únicas
+const allTechnologies = Array.from(
+  new Set(projects.flatMap((project) => project.tags.map((tag) => tag.name)))
+)
+export default function ScrollProyect() {
+  const [selectedTech, setSelectedTech] = useState<string[]>([])
 
-            <div className="p-1">
-                <ProjectCard
-                    src="/port.jpg"
-                    title="Next.js Portfolio"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                />
-                <div className=" grid place-content-center">
-                    <div className="flex flex-wrap gap-2 justify-center w-[300px] ">
-                        <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">Next.js</span>
-                        <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">typeScript</span>
-                        <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">Tailwind</span>
-                    </div>
-                </div>
-            </div>
-            <div className="p-1">
-                <ProjectCard
-                    src="/memealo.jpg"
-                    title="Memealo"
-                    description="Memealo, a card game based on memes, may the best meme win, a fun interaction game with 7 players per room."
-                />
-                <div className=" grid place-content-center">
-                    <div className="flex flex-wrap gap-2 justify-center w-[300px]">
-                        <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">Next.js</span>
-                        <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">typeScript</span>
-                        <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">Prisma</span>
-                        <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">PostgreSQL</span>
-                        <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">express.js</span>
-                        <span className="rounded-lg bg-slate-500 p-1.5 font-sans text-xs font-bold uppercase text-white">Tailwind</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+  const toggleTech = (tech: string) => {
+    setSelectedTech((prev) =>
+      prev.includes(tech) ? prev.filter((t) => t !== tech) : [...prev, tech]
     )
-}
+  }
 
-export default ScrollProyect
+  const filteredProjects = projects.filter((project) =>
+    selectedTech.length === 0
+      ? true
+      : project.tags.some((tech) => selectedTech.includes(tech.name))
+  )
+
+  return (
+    <section>
+      <div className="flex flex-wrap gap-4 justify-center">
+        {allTechnologies.map((tech) => (
+          <button
+            key={tech}
+            onClick={() => toggleTech(tech)}
+            className={`p-1.5 ${
+              selectedTech.includes(tech) ? "bg-blue-500" : "bg-gray-500"
+            } text-white`}
+          >
+            {tech}
+          </button>
+        ))}
+      </div>
+      <section className="flex justify-center flex-wrap gap-2 w-screen h-screen">
+        {filteredProjects.map((project, index) => (
+          <li className="grid place-items-center" key={index}>
+            <article className="grid place-content-center">
+              <div className="w-[300px]">
+                <h1 className="text-2xl text-center font-semibold text-white">
+                  {project.name}
+                </h1>
+                <Image
+                  src={project.src}
+                  alt={project.name}
+                  width={300}
+                  height={300}
+                  className="rounded-lg p-1"
+                />
+                <div>
+                  <p className="mt-2 text-gray-300 text-center">
+                    {project.description}
+                  </p>
+                </div>
+                <div className="flex gap-1 mt-2">
+                  {project.tags.map((tag, idx) => (
+                    <span key={idx} className="text-sm text-gray-300">
+                      {tag.icon && <tag.icon />}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          </li>
+        ))}
+      </section>
+    </section>
+  )
+}

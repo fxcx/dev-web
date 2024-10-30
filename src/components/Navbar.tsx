@@ -1,4 +1,4 @@
-import { Socials } from "@/types"
+import { socials as Socials } from "@/data/social"
 import Link from "next/link"
 import Image from "next/image"
 
