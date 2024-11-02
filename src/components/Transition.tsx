@@ -18,7 +18,7 @@ const TransitionVariants = {
 
 const Transition = (): JSX.Element => {
   return (
-    <div>
+    <section>
       <motion.div
         className='fixed right-0 h-screen w-screen bottom-full z-[30] bg-[#2e2257]'
         variants={TransitionVariants}
@@ -43,7 +43,7 @@ const Transition = (): JSX.Element => {
         animate='animate'
         transition={{ delay: 0.6, duration: 0.6, ease: 'easeInOut' }}
       />
-    </div>
+    </section>
   )
 }
 

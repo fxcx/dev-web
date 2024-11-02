@@ -2,6 +2,7 @@
 import { projects } from '@/data/proyects'
 import Image from 'next/image'
 import { useState } from 'react'
+import Link from 'next/link'
 
 // Extrae las tecnologías únicas
 const allTechnologies = Array.from(
@@ -29,41 +30,44 @@ export default function ScrollProyect (): JSX.Element {
           <button
             key={tech}
             onClick={() => toggleTech(tech)}
-            className={`p-1.5 ${
-              selectedTech.includes(tech) ? 'bg-blue-500' : 'bg-gray-500'
+            className={`p-1.5  rounded-l-3xl ${
+              selectedTech.includes(tech) ? 'bg-blue-500' : 'bg-blue-900'
             } text-white`}
           >
             {tech}
           </button>
         ))}
       </div>
-      <section className='flex justify-center flex-wrap gap-2 w-screen h-screen'>
+      <section className='flex justify-center flex-wrap gap-4 w-screen h-screen'>
         {filteredProjects.map((project, index) => (
           <li className='grid place-items-center' key={index}>
-            <article className='grid place-content-center'>
-              <div className='w-[300px]'>
-                <h1 className='text-2xl text-center font-semibold text-white'>
+            <article className='grid place-content-center py-2 mt-2'>
+              <div className='w-[300px] py-2 place-content-center'>
+                <p className='text-2xl text-center font-semibold text-white'>
                   {project.name}
-                </h1>
+                </p>
                 <Image
                   src={project.src}
                   alt={project.name}
                   width={300}
                   height={300}
-                  className='rounded-lg p-1'
+                  className='rounded-lg py-1'
                 />
                 <div>
-                  <p className='mt-2 text-gray-300 text-center'>
+                  <p className='mt-2 p-2 text-gray-300 text-center'>
                     {project.description}
                   </p>
                 </div>
-                <div className='flex gap-1 mt-2'>
+                <div className='flex justify-start mb-4'>
                   {project.tags.map((tag, idx) => (
-                    <span key={idx} className='text-sm text-gray-300'>
-                      {tag.icon && <tag.icon />}
+                    <span key={idx} className='text-sm text-gray-300 pl-2 pr-2 hover:scale-150'>
+                      <tag.icon />
                     </span>
                   ))}
                 </div>
+                <Link href={project.link} className='flex justify-end'>
+                  <p className='text-fuchsia-50 block border-2 p-1 rounded-3xl'>ver repositorio➕</p>
+                </Link>
               </div>
             </article>
           </li>

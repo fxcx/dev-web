@@ -2,7 +2,7 @@ import { socials as Socials } from '@/data/social'
 import Link from 'next/link'
 import Image from 'next/image'
 
-const Navbar = () => {
+const Navbar = (): JSX.Element => {
   return (
     <div className='absolute top-0 z-[40] w-full h-[100px] bg-transparent flex justify-between flex-block px-10 md:px-20'>
       <div className='flex flex-row gap-3 items-center'>
@@ -15,14 +15,14 @@ const Navbar = () => {
         </h1>
       </div>
 
-      <div className='flex'>
+      <div className='flex gap-4'>
         {Socials.map((social) => (
-          <li key={social.name}>
+          <div className='py-4' key={social.name}>
             <Image
               src={social.src}
               alt={social.name}
-              width={28}
-              height={28}
+              width={38}
+              height={38}
             />
 
             <Link
@@ -32,7 +32,7 @@ const Navbar = () => {
             >
               {social.name}
             </Link>
-          </li>
+          </div>
         ))}
       </div>
     </div>

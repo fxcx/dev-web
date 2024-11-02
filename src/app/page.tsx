@@ -26,14 +26,14 @@ export default function HomeView (): JSX.Element {
               href='/my-skills'
               className='rounded-[20px] group relative bg-blue-500 hover:bg-blue-400 px-5 py-3 text-lg text-white max-w-[200px]'
             >
-              skills
+              Habilidades
             </Link>
             <Link
-              href='/my-projects'
+              href='/projects'
               className='rounded-[20px] group relative bg-trasparent px-5 border border-white py-3 text-lg text-white max-w-[200px]'
             >
               <div className='absolute rounded-[20px]  bg-white inset-0 opacity-0 group-hver:opacity-20' />
-              My projects
+              Proyectos
             </Link>
           </div>
         </div>

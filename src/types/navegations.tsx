@@ -7,13 +7,13 @@ export const NavLinks = [
     link: '/'
   },
   {
-    name: '/my-skills',
+    name: '/skills',
     icon: RxPerson,
-    link: '/my-skills'
+    link: '/skills'
   },
   {
-    name: '/my-projects',
+    name: '/projects',
     icon: RxDashboard,
-    link: '/my-projects'
+    link: '/projects'
   }
 ]
