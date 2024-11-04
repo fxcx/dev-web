@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { useState } from 'react'
 import Link from 'next/link'
 
-// Extrae las tecnologías únicas
 const allTechnologies = Array.from(
   new Set(projects.flatMap((project) => project.tags.map((tag) => tag.name)))
 )
@@ -24,13 +23,13 @@ export default function ScrollProyect (): JSX.Element {
   )
 
   return (
-    <section>
+    <section className='py-1'>
       <div className='flex flex-wrap gap-4 justify-center'>
         {allTechnologies.map((tech) => (
           <button
             key={tech}
             onClick={() => toggleTech(tech)}
-            className={`p-1.5  rounded-l-3xl ${
+            className={`p-2.5  rounded-l-3xl ${
               selectedTech.includes(tech) ? 'bg-blue-500' : 'bg-blue-900'
             } text-white`}
           >
@@ -38,41 +37,43 @@ export default function ScrollProyect (): JSX.Element {
           </button>
         ))}
       </div>
-      <section className='flex justify-center flex-wrap gap-4 w-screen h-screen'>
+      <section className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full h-full justify-items-center items-center'>
         {filteredProjects.map((project, index) => (
-          <li className='grid place-items-center' key={index}>
-            <article className='grid place-content-center py-2 mt-2'>
-              <div className='w-[300px] py-2 place-content-center'>
-                <p className='text-2xl text-center font-semibold text-white'>
-                  {project.name}
-                </p>
+          <li className='list-none' key={index}>
+            <article className='flex flex-col items-center p-4 rounded-lg'>
+              <p className='text-2xl text-center font-semibold text-white'>
+                {project.name}
+              </p>
+              <div>
                 <Image
                   src={project.src}
                   alt={project.name}
                   width={300}
                   height={300}
-                  className='rounded-lg py-1'
+                  layout='fixed'
+                  className='rounded-lg  p-1'
                 />
-                <div>
-                  <p className='mt-2 p-2 text-gray-300 text-center'>
-                    {project.description}
-                  </p>
-                </div>
-                <div className='flex justify-start mb-4'>
-                  {project.tags.map((tag, idx) => (
-                    <span key={idx} className='text-sm text-gray-300 pl-2 pr-2 hover:scale-150'>
-                      <tag.icon />
-                    </span>
-                  ))}
-                </div>
-                <Link href={project.link} className='flex justify-end'>
-                  <p className='text-fuchsia-50 block border-2 p-1 rounded-3xl'>ver repositorio➕</p>
-                </Link>
               </div>
+              <p className='p-2 text-gray-300 text-center'>
+                {project.description}
+              </p>
+              <div className='flex flex-wrap justify-center gap-2'>
+                {project.tags.map((tag, idx) => (
+                  <span key={idx} className='text-sm text-gray-300 px-2 hover:scale-150'>
+                    <tag.icon />
+                  </span>
+                ))}
+              </div>
+              <Link href={project.link} className='block text-center mt-4'>
+                <p className='text-fuchsia-50 border-2 p-1 rounded-3xl'>
+                  Ver repositorio ➕
+                </p>
+              </Link>
             </article>
           </li>
         ))}
       </section>
+
     </section>
   )
 }
