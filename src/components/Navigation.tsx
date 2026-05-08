@@ -17,7 +17,7 @@ export const handleNavigationChange = ({
   path,
   setIsRouting,
   setPrevPath
-}: HandleNavigationChangeProps): (() => void) | void => {
+}: HandleNavigationChangeProps): (() => void) | undefined => {
   if (prevPath !== path) {
     setIsRouting(true)
     const timeout = setTimeout(() => {
@@ -40,13 +40,12 @@ const Navigation = (): JSX.Element => {
   }, [path, prevPath])
   return (
     <div
-      style={{ left: '25%' }}
-      className='absolute z-[50] -bottom-20 w-[50%] md:w-[50%] max-h-[150px] rounded-full flex justify-center items-center border bg-black border-white p-4'
+      className='fixed z-[50] bottom-4 left-1/2 -translate-x-1/2 w-[50%] md:w-[50%] max-h-[80px] rounded-full flex justify-center items-center border bg-black/80 backdrop-blur-sm border-white/30 p-3'
     >
       {isRouting && <Transition />}
       {NavLinks.map((nav) => (
         <Link key={nav.name} href={nav.link}>
-          <div className='mb-16 min-w-[20%]'>
+          <div className='min-w-[20%] flex justify-center'>
             <nav.icon
               className={`w-[34px] h-[34px] p-1 mr-2 ml-2 ${
                 path === nav.link ? 'text-purple-800' : 'text-white'

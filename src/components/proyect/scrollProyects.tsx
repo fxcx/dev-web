@@ -29,7 +29,7 @@ export default function ScrollProyect (): JSX.Element {
           <button
             key={tech}
             onClick={() => toggleTech(tech)}
-            className={`p-2.5  rounded-l-3xl ${
+            className={`p-2.5 rounded-3xl ${
               selectedTech.includes(tech) ? 'bg-blue-500' : 'bg-blue-900'
             } text-white`}
           >
@@ -50,8 +50,7 @@ export default function ScrollProyect (): JSX.Element {
                   alt={project.name}
                   width={300}
                   height={300}
-                  layout='fixed'
-                  className='rounded-lg  p-1'
+                  className='rounded-lg p-1'
                 />
               </div>
               <p className='p-2 text-gray-300 text-center'>

@@ -23,16 +23,16 @@ export default function HomeView (): JSX.Element {
           </p>
           <div className='flex justify-items-center md:flex-row md:flex gap-3'>
             <Link
-              href='skills'
+              href='/skills'
               className='rounded-[20px] group relative bg-blue-500 hover:bg-blue-400 px-5 py-3 text-lg text-white max-w-[200px]'
             >
               Habilidades
             </Link>
             <Link
               href='/projects'
-              className='rounded-[20px] group relative bg-trasparent px-5 border border-white py-3 text-lg text-white max-w-[200px]'
+              className='rounded-[20px] group relative bg-transparent px-5 border border-white py-3 text-lg text-white max-w-[200px]'
             >
-              <div className='absolute rounded-[20px]  bg-white inset-0 opacity-0 group-hver:opacity-20' />
+              <div className='absolute rounded-[20px] bg-white inset-0 opacity-0 group-hover:opacity-20' />
               Proyectos
             </Link>
           </div>
